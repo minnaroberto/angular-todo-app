@@ -1,0 +1,46 @@
+<app-todo-add></app-todo-add>
+<div>
+  <h3 [ngStyle]="{ paddingTop: '20px' }">List of To Do Tasks:</h3>
+  <ul
+    [ngStyle]="{
+      'list-style-type': 'none',
+      'text-align': 'left',
+      paddingLeft: '0px'
+    }"
+  >
+    <li
+      *ngFor="let task of todos; let i = index"
+      [ngStyle]="{
+        paddingTop: '20px',
+        paddingBottom: '20px'
+      }"
+    >
+      <div
+        [ngStyle]="{
+          display: 'inline'
+        }"
+      >
+        {{ task.name }}
+      </div>
+      <div
+        [ngStyle]="{
+          display: 'inline',
+          float: 'right'
+        }"
+      >
+        <button
+          [ngStyle]="{
+            display: 'inline',
+            justifyContent: 'space-between',
+            marginRight: '5px'
+          }"
+          type="button"
+          (click)="onComplete(i, task)"
+        >
+          Complete
+        </button>
+        <button (click)="onDelete(i)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+<div
+  [ngStyle]="{
+    display: 'flex',
+    'flex-direction': 'row',
+    'justify-content': 'center',
+    'text-align': 'center',
+    width: '100%'
+  }"
+>
+  <div [ngStyle]="{ width: '25%' }">
+    <h1>Angular To Do App</h1>
+    <hr />
+    <app-todo-list></app-todo-list>
+    <app-todo-completed-list></app-todo-completed-list>
+  </div>
+</div>

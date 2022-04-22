@@ -1,0 +1,55 @@
+<div>
+  <h3 [ngStyle]="{ paddingTop: '20px' }">List of Completed To Do Tasks:</h3>
+  <ul
+    [ngStyle]="{
+      'list-style-type': 'none',
+      'text-align': 'left',
+      paddingLeft: '0px'
+    }"
+  >
+    <li
+      *ngFor="let completeTask of completedTodos; let i = index"
+      [ngStyle]="{
+        paddingTop: '20px',
+        paddingBottom: '20px'
+      }"
+    >
+      <div
+        [ngStyle]="{
+          display: 'inline'
+        }"
+      >
+        {{ completeTask.name }}
+      </div>
+      <div
+        [ngStyle]="{
+          display: 'inline',
+          float: 'right'
+        }"
+      >
+        <button
+          [ngStyle]="{
+            display: 'inline',
+            justifyContent: 'space-between',
+            marginRight: '5px'
+          }"
+          type="button"
+          (click)="onMoveBacktoTodo(i, completeTask)"
+        >
+          Move to To Do
+        </button>
+        <button
+          [ngStyle]="{
+            display: 'inline',
+            justifyContent: 'space-between',
+            marginRight: '5px'
+          }"
+          type="button"
+          (click)="onDelete(i)"
+        >
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
